@@ -6,7 +6,7 @@ class Users::RegistrationsController < Users::BaseController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new(user_params.to_h)
     begin
       User.transaction do
         if @user.valid?

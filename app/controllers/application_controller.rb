@@ -28,6 +28,6 @@ class ApplicationController < ActionController::Base
     end
 
     def after_login_path
-      # mypage_path
+      '/'
     end
 end
