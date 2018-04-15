@@ -11,9 +11,9 @@ gem "mysql2", ">= 0.3.18", "< 0.6.0"
 gem "puma", "~> 3.7"
 gem "rails", "~> 5.1.6"
 gem "sass-rails", "~> 5.0"
+gem "skeleton-rails", git: "https://github.com/helios-technologies/skeleton-rails"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
-gem 'skeleton-rails', :git => 'https://github.com/helios-technologies/skeleton-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -22,8 +22,8 @@ gem 'skeleton-rails', :git => 'https://github.com/helios-technologies/skeleton-r
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem "doorkeeper"
 gem "authlogic"
+gem "doorkeeper"
 
 group :development, :test do
   gem "byebug"
