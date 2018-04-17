@@ -1,21 +1,22 @@
-
-<div class="">
-  <%= form_for @user, :url => user_registrations_path, html: { class: 'pure-form pure-form-stacked'} do |f| %>
-  <fieldset>
-    <legend>ユーザ登録</legend>
-    <div class="pure-control-group">
-      <%= f.label :email %>
-      <%= f.text_field :email, autofocus: true %>
-    </div>
-    <div class="pure-control-group">
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-    </div>
-    <div class="pure-control-group">
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation %>
-    </div>
-    <%= f.submit "登録", class: 'pure-button pure-button-primary' %>
-  </fieldset>
-  <% end %>
-</div>
+<%= form_for @user, :url => user_registrations_path, html: { class: 'pure-form pure-form-stacked'} do |f| %>
+<fieldset>
+  <legend>ユーザ登録</legend>
+  <div class="pure-control-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, autofocus: true %>
+  </div>
+  <div class="pure-control-group">
+    <%= f.label :slack_uid %>
+    <%= f.text_field :slack_uid, autofocus: true %>
+  </div>
+  <div class="pure-control-group">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div class="pure-control-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <%= f.submit "登録", class: 'pure-button pure-button-primary' %>
+</fieldset>
+<% end %>

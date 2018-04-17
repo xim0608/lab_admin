@@ -10,7 +10,7 @@ class User::SessionsController < User::BaseController
     @user_session = UserSession.new(user_session_params.to_h)
 
     if @user_session.save
-      flash.now[:notice] = "ログインしました。"
+      flash[:notice] = "ログインしました。"
       redirect_to root_path
     else
       flash.now[:error] = "ログインに失敗しました。"

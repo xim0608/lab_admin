@@ -1,0 +1,14 @@
+<%= form_for @user, :url => user_registration_path(@user), html: { class: 'pure-form pure-form-stacked'} do |f| %>
+<fieldset>
+  <legend>ユーザ情報修正</legend>
+  <div class="pure-control-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, autofocus: true %>
+  </div>
+  <div class="pure-control-group">
+    <%= f.label :slack_uid %>
+    <%= f.text_field :slack_uid, autofocus: true %>
+  </div>
+  <%= f.submit "更新", class: 'pure-button pure-button-primary' %>
+</fieldset>
+<% end %>

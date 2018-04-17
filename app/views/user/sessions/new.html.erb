@@ -1,8 +1,13 @@
-<%= form_for @user_session, url: user_sessions_path do |f| %>
-  <%= f.label :email %>
-  <%= f.text_field :email, autofocus: true %>
-
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.submit "ログイン" %>
+<%= form_for @user_session, url: user_sessions_path, html: { class: 'pure-form pure-form-stacked'}  do |f| %>
+<fieldset>
+  <div class="pure-control-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, autofocus: true %>
+  </div>
+  <div class="pure-control-group">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <%= f.submit "ログイン", class: 'pure-button pure-button-primary' %>
+</fieldset>
 <% end %>

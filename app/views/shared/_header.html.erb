@@ -6,7 +6,7 @@
       <%= link_to "Sign Out", sign_out_path, method: "delete", class: "pure-menu-link" %>
     </li>
     <li class="pure-menu-item">
-      <a href="#" class="pure-menu-link"><%= current_user.email %></a>
+      <a href="<%= edit_user_registration_path(current_user) %>" class="pure-menu-link"><%= current_user.email %></a>
     </li>
     <% else %>
     <li class="pure-menu-item">
