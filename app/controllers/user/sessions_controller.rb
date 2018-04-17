@@ -1,4 +1,4 @@
-class Users::SessionsController < Users::BaseController
+class User::SessionsController < User::BaseController
   skip_before_action :require_login, only: [:new, :create]
 
   def new
@@ -9,17 +9,18 @@ class Users::SessionsController < Users::BaseController
     @user_session = UserSession.new(user_session_params.to_h)
 
     if @user_session.save
-      flash[:notice] = "ログインしました。"
-      redirect_to after_login_path
+      flash.now[:notice] = "ログインしました。"
+      redirect_to root_path
     else
+      flash.now[:error] = "ログインに失敗しました。"
       render action: :new
     end
   end
 
   def destroy
     current_user_session.destroy
-    flash[:notice] = "ログアウトしました。"
-    redirect_to root_url
+    flash.now[:notice] = "ログアウトしました。"
+    redirect_to root_path
   end
 
   private

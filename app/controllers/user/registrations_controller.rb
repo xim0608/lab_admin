@@ -1,4 +1,4 @@
-class Users::RegistrationsController < Users::BaseController
+class User::RegistrationsController < User::BaseController
   skip_before_action :require_login, only: [:new, :create]
 
   def new
@@ -11,10 +11,10 @@ class Users::RegistrationsController < Users::BaseController
       User.transaction do
         if @user.valid?
           @user.save!
-          flash[:notice] = "登録完了"
+          flash.now[:notice] = "登録完了"
           redirect_to after_login_path
         else
-          flash[:error] = "登録エラー"
+          flash.now[:error] = "登録エラー"
           render action: :new
         end
       end

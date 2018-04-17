@@ -1,0 +1,20 @@
+<div class="home-menu pure-menu pure-menu-horizontal">
+  <a href="<%= root_path %>" class="pure-menu-heading">Lab Admin</a>
+  <ul class="pure-menu-list">
+    <% if logged_in? %>
+    <li class="pure-menu-item">
+      <%= link_to "Sign Out", sign_out_path, method: "delete", class: "pure-menu-link" %>
+    </li>
+    <li class="pure-menu-item">
+      <a href="#" class="pure-menu-link"><%= current_user.email %></a>
+    </li>
+    <% else %>
+    <li class="pure-menu-item">
+      <%= link_to "Sign In", sign_in_path, method: "get", class: "pure-menu-link" %>
+    </li>
+    <li class="pure-menu-item">
+      <%= link_to "Sign Up", sign_up_path, method: "get", class: "pure-menu-link" %>
+    </li>
+    <% end %>
+  </ul>
+</div>
